@@ -7,8 +7,8 @@ class MainProgram {
     //Deklaration
     private static int[] numbers;
 
-    public static void main(String[] args){
-        withNegatives = false;
+    public static void main(String[] args) {
+        withNegatives = true;
         maxAbsolute = 100;
         numbers = new int[10];
         fillArray(numbers, withNegatives, maxAbsolute);
@@ -22,27 +22,28 @@ class MainProgram {
         System.out.println("Summe der negativen Zahlen: " + sumUpNegatives(numbers));
     }
 
-    private static void fillArray(int[] array, boolean wN, int maxA){
-        if(wN){
-            for(int i = 0; i < array.length; i++){
-                int power = (int)(Math.random()*2);
-                array[i] = (int)(Math.pow(-1,power)*(Math.random()*(maxA+1)));
+    private static void fillArray(int[] array, boolean wN, int maxA) {
+        if (wN) {
+            for (int i = 0; i < array.length; i++) {
+                int power = (int) (Math.random() * 2);
+                array[i] = (int) (Math.pow(-1, power) * (Math.random() * (maxA + 1)));
             }
-        }else{
-            for(int i = 0; i < numbers.length; i++){
-                array[i] = (int)(Math.random()*(maxA+1));
+        } else {
+            for (int i = 0; i < numbers.length; i++) {
+                array[i] = (int) (Math.random() * (maxA + 1));
             }
         }
     }
 
     /**
      * Diese Methode stellt alle Werte des übergeben Arrays samt dazugehörigem Index in der Systemkonsole dar.
+     *
      * @param array
      */
-    private static void showArray(int[] array){
-        if(array != null){
-            for(int i = 0; i < array.length; i++){
-                System.out.println("Index: "+i+" --- Zahl: "+array[i]);
+    private static void showArray(int[] array) {
+        if (array != null) {
+            for (int i = 0; i < array.length; i++) {
+                System.out.println("Index: " + i + " --- Zahl: " + array[i]);
             }
         }
     }
@@ -51,13 +52,14 @@ class MainProgram {
     /**
      * 1. Alle Werte aufaddieren
      * Schreiben Sie eine Methode sumUp, die als Parameter ein Array des Typs int übergeben bekommt. Die Methode sumUp soll die enthaltenen Zahlen addieren und das Ergebnis zurückliefern.
+     *
      * @param array
      * @return Summe aller Zahlen im Array
      */
-    private static int sumUp(int[] array){
+    private static int sumUp(int[] array) {
         int result = 0;
-        for(int i = 0; i <array.length; i++){
-            result =  result + array[i];
+        for (int i = 0; i < array.length; i++) {
+            result = result + array[i];
         }
         //Hier muss Quellcode ergänzt werden.
         return result;
@@ -67,12 +69,17 @@ class MainProgram {
     /**
      * 2. Negative Werte zählen - hierzu bitte in Zeile 11 withNegatives = true setzen.
      * Schreiben Sie eine Methode countNegatives, die als Parameter ein Array des Typs int übergeben bekommt. Die Methode countNegatives soll die negativen Werte in diesem Array zählen und das Ergebnis als zurückgeben.
+     *
      * @param array
      * @return Anzahl der negativen Zahlen im Array
      */
-    private static int countNegatives(int[] array){
+    private static int countNegatives(int[] array) {
         int result = 0;
-        //Hier muss Quellcode ergänzt werden.
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < 0) {
+                result = result + 1;
+            }
+        }
         return result;
     }
 
@@ -80,15 +87,16 @@ class MainProgram {
     /**
      * 3. Negative Werte aufsummieren
      * Schreiben Sie eine Methode sumUpNegatives, die als Parameter ein Array des Typs int übergeben bekommt. Die Methode sumUpNegatives soll die Summe der negativen Werte in diesem Array zurückgeben.
+     *
      * @param array
      * @return Summe aller negativen Zahlen im Array
      */
-    private static int sumUpNegatives(int[] array){
+    private static int sumUpNegatives(int[] array) {
         int result = 0;
         //Hier muss Quellcode ergänzt werden.
         return result;
     }
-
+}
 
 
     /** 4. Bestimmen des Maximums in einem Feld
@@ -98,13 +106,11 @@ class MainProgram {
      */
 
 
-
     /** 5. Bestimmen des Index des Maximums in einem Feld
      * Schreiben Sie eine Methode findMaximumIndex, die ein Array des Typs int als Parameter
      * übergeben bekommt und die den Index des größten Werts in diesem Array zurückgibt.
      * Tipp: Versuchen Sie, mit einem Durchlauf durch das Array zu kommen.
      */
-
 
 
     /** 6. Bestimmen der Häufigkeit des Maximums in einem Feld
@@ -113,13 +119,11 @@ class MainProgram {
      */
 
 
-
     /** 7. Sortierung prüfen
      * Schreiben Sie eine Methode isSorted, die als Parameter ein Array des Typs int
      * übergeben bekommt. Die Methode isSorted soll true zurückgeben, falls die im Array enthaltenen Werte aufsteigend sortiert sind.
      * Sonst soll false zurückgegeben werden.
      */
-
 
 
     /** 8. Palindrome
@@ -131,13 +135,9 @@ class MainProgram {
      */
 
 
-
     /** 9. Erhöhen der Inhalte eines Feldes
      * Schreiben Sie eine Methode increaseArray, die als Parameter ein Array des Typs int und einen int-Wert erhält.
      * Die Methode increaseArray soll alle Werte des Arrays um den im zweiten Parameter übergebenen Wert erhöhen und als neues Array zurückgeben.
      * Beispiel: Werden ein Array mit den Elementen 80,7,1,56,11,72,43,37 als erstes und der Wert 17 als zweites Argument übergeben,
      * so soll ein neues(!) Array mit den Werten 97,24,18,73,28,89,60,54 zurückgegeben werden.
      */
-
-
-}
