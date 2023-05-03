@@ -93,7 +93,11 @@ class MainProgram {
      */
     private static int sumUpNegatives(int[] array) {
         int result = 0;
-        //Hier muss Quellcode ergänzt werden.
+        for(int i = 0; i < array.length; i++){
+            if (array[i] < 0){
+                result = result + array[i];
+            }
+        }
         return result;
     }
 }
