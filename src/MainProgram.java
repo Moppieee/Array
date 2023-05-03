@@ -1,3 +1,4 @@
+
 class MainProgram {
 
     //Attribute
@@ -20,6 +21,7 @@ class MainProgram {
         System.out.println("Summe aller Zahlen im Array: " + sumUp(numbers));
         System.out.println("In diesem Array gibt es " + countNegatives(numbers) + " negative Zahlen.");
         System.out.println("Summe der negativen Zahlen: " + sumUpNegatives(numbers));
+//        System.out.println("Maximum in der Array: " + findMaximum());
     }
 
     private static void fillArray(int[] array, boolean wN, int maxA) {
@@ -93,21 +95,29 @@ class MainProgram {
      */
     private static int sumUpNegatives(int[] array) {
         int result = 0;
-        for(int i = 0; i < array.length; i++){
-            if (array[i] < 0){
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < 0) {
                 result = result + array[i];
             }
         }
         return result;
     }
-}
 
 
-    /** 4. Bestimmen des Maximums in einem Feld
+    /**
+     * 4. Bestimmen des Maximums in einem Feld
      * Schreiben Sie eine Methode findMaximum, die ein Array des Typs int als Parameter
      * übergeben bekommt und die den größten Wert in diesem Array zurückgibt.
      * Tipp: Versuchen Sie, mit einem Durchlauf durch das Array zu kommen.
      */
+    private static void findMaximum(int[] array) {
+        int result = 0;
+        for (int i = 0; i < array.length; i++) {
+
+        }
+    }
+}
+
 
 
     /** 5. Bestimmen des Index des Maximums in einem Feld
