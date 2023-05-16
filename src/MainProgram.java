@@ -21,7 +21,7 @@ class MainProgram {
         System.out.println("Summe aller Zahlen im Array: " + sumUp(numbers));
         System.out.println("In diesem Array gibt es " + countNegatives(numbers) + " negative Zahlen.");
         System.out.println("Summe der negativen Zahlen: " + sumUpNegatives(numbers));
-//        System.out.println("Maximum in der Array: " + findMaximum());
+        System.out.println("Index der Maximum Value in der Array: " + findMaximumIndex(numbers));
     }
 
     private static void fillArray(int[] array, boolean wN, int maxA) {
@@ -110,13 +110,14 @@ class MainProgram {
      * übergeben bekommt und die den größten Wert in diesem Array zurückgibt.
      * Tipp: Versuchen Sie, mit einem Durchlauf durch das Array zu kommen.
      */
-    private static void findMaximum(int[] array) {
+    private static int findMaximum(int[] array) {
         int result = 0;
         for (int i = 0; i < array.length; i++) {
 
         }
+        return result;
     }
-}
+
 
 
 
@@ -125,7 +126,14 @@ class MainProgram {
      * übergeben bekommt und die den Index des größten Werts in diesem Array zurückgibt.
      * Tipp: Versuchen Sie, mit einem Durchlauf durch das Array zu kommen.
      */
-
+    private static int findMaximumIndex(int[] array) {
+        int result = 0;
+        for (int i = 0; i < array.length; i++) {
+            result = array[i] > array[result] ? i : result;
+        }
+        return result;
+    }
+}
 
     /** 6. Bestimmen der Häufigkeit des Maximums in einem Feld
      * Schreiben Sie eine Methode countMaximum, die ein Array des Typs int als Parameter
