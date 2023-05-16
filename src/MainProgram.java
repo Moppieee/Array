@@ -21,6 +21,7 @@ class MainProgram {
         System.out.println("Summe aller Zahlen im Array: " + sumUp(numbers));
         System.out.println("In diesem Array gibt es " + countNegatives(numbers) + " negative Zahlen.");
         System.out.println("Summe der negativen Zahlen: " + sumUpNegatives(numbers));
+        System.out.println("Die Maximum Value in der Array: " + findMaximum(numbers));
         System.out.println("Index der Maximum Value in der Array: " + findMaximumIndex(numbers));
     }
 
@@ -113,15 +114,16 @@ class MainProgram {
     private static int findMaximum(int[] array) {
         int result = 0;
         for (int i = 0; i < array.length; i++) {
-
+            if (result <= array[i]){
+                result = array[i];
+            }
         }
         return result;
     }
 
 
-
-
-    /** 5. Bestimmen des Index des Maximums in einem Feld
+    /**
+     * 5. Bestimmen des Index des Maximums in einem Feld
      * Schreiben Sie eine Methode findMaximumIndex, die ein Array des Typs int als Parameter
      * übergeben bekommt und die den Index des größten Werts in diesem Array zurückgibt.
      * Tipp: Versuchen Sie, mit einem Durchlauf durch das Array zu kommen.
@@ -133,13 +135,19 @@ class MainProgram {
         }
         return result;
     }
+
 }
 
-    /** 6. Bestimmen der Häufigkeit des Maximums in einem Feld
+    /**
+     * 6. Bestimmen der Häufigkeit des Maximums in einem Feld
      * Schreiben Sie eine Methode countMaximum, die ein Array des Typs int als Parameter
      * übergeben bekommt und die Häufigkeit der größten Zahl in diesem Array zurückgibt.
      */
-
+//    private static int countMaximum(int[] array) {
+//        int result = 0;
+//          for(int i = 0; i < array.length; i++){
+//              result =
+//    }
 
     /** 7. Sortierung prüfen
      * Schreiben Sie eine Methode isSorted, die als Parameter ein Array des Typs int
