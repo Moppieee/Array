@@ -29,7 +29,7 @@ class MainProgram {
         int arr[] = {1, 2, 3, 2, 1};
         int n = arr.length;
 
-        palindromCheck(arr, n);
+        palindromCheck(numbers);
     }
 
     private static void fillArray(int[] array, boolean wN, int maxA) {
@@ -180,16 +180,14 @@ class MainProgram {
      * ob es sich bei dem Array um ein Palindrom handelt.
      * Die Methode soll einen Wert des Typs boolean zurückgeben.
      */
-    private static void palindromCheck(int[] array, int n) {
+    private static void palindromCheck(int[] array) {
         // Initialise flag to zero.
         int flag = 0;
 
         // Loop till array size n/2.
-        for (int i = 0; i <= n / 2 && n != 0; i++) {
+        for (int i = 0; i <= array.length / 2 && array.length != 0; i++) {
 
-            // Check if first and last element are different
-            // Then set flag to 1.
-            if (array[i] != array[n - i - 1]) {
+            if (array[i] != array[array.length - i - 1]) {
                 flag = 1;
                 break;
             }
@@ -214,6 +212,7 @@ class MainProgram {
         int array2 = 0;
         for (int i = 0; i < array.length; i++) {
             array[i] = array[1] + array[i + 1];
+
         }
     }
 
