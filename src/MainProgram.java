@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 class MainProgram {
 
@@ -25,7 +26,7 @@ class MainProgram {
         System.out.println("Index der Maximum Value in der Array: " + findMaximumIndex(numbers));
         System.out.println("Häufigkeit des Maximums in der Array: " + countMaximum(numbers));
         System.out.println("forgot how to print boolean");
-        int arr[] = { 1, 2, 3, 2, 1 };
+        int arr[] = {1, 2, 3, 2, 1};
         int n = arr.length;
 
         palindromCheck(arr, n);
@@ -171,14 +172,15 @@ class MainProgram {
     }
 
 
-    /** 8. Palindrome
+    /**
+     * 8. Palindrome
      * Ein Palindrom ist eine Folge von int-Werten, die vorwärts und rückwärts identisch gelesen werden kann.
      * Beispiele: 12 34 78 34 12 oder 5 17 85 85 17 5
      * Schreiben Sie eine Methode checkArray, die ein Array des Typs int übergeben bekommt und überprüft,
      * ob es sich bei dem Array um ein Palindrom handelt.
      * Die Methode soll einen Wert des Typs boolean zurückgeben.
      */
-    private static void palindromCheck(int[] array , int n){
+    private static void palindromCheck(int[] array, int n) {
         // Initialise flag to zero.
         int flag = 0;
 
@@ -201,7 +203,6 @@ class MainProgram {
             System.out.println("Palindrome");
     }
 
-}
 
     /** 9. Erhöhen der Inhalte eines Feldes
      * Schreiben Sie eine Methode increaseArray, die als Parameter ein Array des Typs int und einen int-Wert erhält.
@@ -209,3 +210,11 @@ class MainProgram {
      * Beispiel: Werden ein Array mit den Elementen 80,7,1,56,11,72,43,37 als erstes und der Wert 17 als zweites Argument übergeben,
      * so soll ein neues(!) Array mit den Werten 97,24,18,73,28,89,60,54 zurückgegeben werden.
      */
+    private static void increaseArray(int[] array) {
+        int array2 = 0;
+        for (int i = 0; i < array.length; i++) {
+            array[i] = array[1] + array[i + 1];
+        }
+    }
+
+}
