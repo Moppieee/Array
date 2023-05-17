@@ -23,6 +23,12 @@ class MainProgram {
         System.out.println("Summe der negativen Zahlen: " + sumUpNegatives(numbers));
         System.out.println("Die Maximum Value in der Array: " + findMaximum(numbers));
         System.out.println("Index der Maximum Value in der Array: " + findMaximumIndex(numbers));
+        System.out.println("Häufigkeit des Maximums in der Array: " + countMaximum(numbers));
+        System.out.println("forgot how to print boolean");
+        int arr[] = { 1, 2, 3, 2, 1 };
+        int n = arr.length;
+
+        palindromCheck(arr, n);
     }
 
     private static void fillArray(int[] array, boolean wN, int maxA) {
@@ -112,13 +118,13 @@ class MainProgram {
      * Tipp: Versuchen Sie, mit einem Durchlauf durch das Array zu kommen.
      */
     private static int findMaximum(int[] array) {
-        int result = 0;
+        int max = 0;
         for (int i = 0; i < array.length; i++) {
-            if (result <= array[i]){
-                result = array[i];
+            if (max <= array[i]) {
+                max = array[i];
             }
         }
-        return result;
+        return max;
     }
 
 
@@ -136,24 +142,33 @@ class MainProgram {
         return result;
     }
 
-}
 
     /**
      * 6. Bestimmen der Häufigkeit des Maximums in einem Feld
      * Schreiben Sie eine Methode countMaximum, die ein Array des Typs int als Parameter
      * übergeben bekommt und die Häufigkeit der größten Zahl in diesem Array zurückgibt.
      */
-//    private static int countMaximum(int[] array) {
-//        int result = 0;
-//          for(int i = 0; i < array.length; i++){
-//              result =
-//    }
+    private static int countMaximum(int[] array) {
+        int result = 0;
+        for (int i = 0; i < array.length; i++) {
+            result = 0;
+        }
+        return result;
+    }
 
-    /** 7. Sortierung prüfen
+    /**
+     * 7. Sortierung prüfen
      * Schreiben Sie eine Methode isSorted, die als Parameter ein Array des Typs int
      * übergeben bekommt. Die Methode isSorted soll true zurückgeben, falls die im Array enthaltenen Werte aufsteigend sortiert sind.
      * Sonst soll false zurückgegeben werden.
      */
+    boolean isSorted(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] > array[i + 1])
+                return false;
+        }
+        return true;
+    }
 
 
     /** 8. Palindrome
@@ -163,7 +178,30 @@ class MainProgram {
      * ob es sich bei dem Array um ein Palindrom handelt.
      * Die Methode soll einen Wert des Typs boolean zurückgeben.
      */
+    private static void palindromCheck(int[] array , int n){
+        // Initialise flag to zero.
+        int flag = 0;
 
+        // Loop till array size n/2.
+        for (int i = 0; i <= n / 2 && n != 0; i++) {
+
+            // Check if first and last element are different
+            // Then set flag to 1.
+            if (array[i] != array[n - i - 1]) {
+                flag = 1;
+                break;
+            }
+        }
+
+        // If flag is set then print Not Palindrome
+        // else print Palindrome.
+        if (flag == 1)
+            System.out.println("Not Palindrome");
+        else
+            System.out.println("Palindrome");
+    }
+
+}
 
     /** 9. Erhöhen der Inhalte eines Feldes
      * Schreiben Sie eine Methode increaseArray, die als Parameter ein Array des Typs int und einen int-Wert erhält.
